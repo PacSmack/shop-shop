@@ -1,4 +1,5 @@
 import { UPDATE_PRODUCTS, UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from './actions'
+import { useReducer } from 'react';
 
 export const reducer = (state, action) => {
     switch (action.type) {
@@ -26,4 +27,8 @@ export const reducer = (state, action) => {
         default:
             return state
     }
+}
+
+export function useProductReducer(initialState) {
+    return useReducer(reducer, initialState)
 }
