@@ -75,6 +75,12 @@ export const reducer = (state, action) => {
                 cart: []
             }
 
+        case TOGGLE_CART:
+            return {
+                ...state,
+                cartOpen: !state.cartOpen
+            };
+
         // IF IT'S NONE OF THESE ACTIONS, DO NOT UPDATE STATE AT ALL AND KEEP THINGS THE SAME!
         default:
             return state
