@@ -52,7 +52,7 @@ function Detail() {
 
           <p>
             <strong>Price:</strong>${currentProduct.price}{' '}
-            <button>Add to Cart</button>
+            <button onClick={addToCart}>Add to Cart</button>
             <button>Remove from Cart</button>
           </p>
 
