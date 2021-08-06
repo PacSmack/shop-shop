@@ -40,6 +40,12 @@ export const reducer = (state, action) => {
                 cart: [...state.cart, action.product]
             }
 
+        case ADD_MULTIPLE_TO_CART:
+            return {
+                ...state,
+                cart: [...state.cart, ...action.products]
+            }
+
         // IF IT'S NONE OF THESE ACTIONS, DO NOT UPDATE STATE AT ALL AND KEEP THINGS THE SAME!
         default:
             return state
