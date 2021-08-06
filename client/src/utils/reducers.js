@@ -1,4 +1,14 @@
-import { UPDATE_PRODUCTS, UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from './actions'
+import {
+    UPDATE_PRODUCTS,
+    UPDATE_CATEGORIES,
+    UPDATE_CURRENT_CATEGORY,
+    ADD_TO_CART,
+    ADD_MULTIPLE_TO_CART,
+    REMOVE_FROM_CART,
+    UPDATE_CART_QUANTITY,
+    CLEAR_CART,
+    TOGGLE_CART
+} from './actions'
 import { useReducer } from 'react';
 
 export const reducer = (state, action) => {
@@ -21,6 +31,13 @@ export const reducer = (state, action) => {
             return {
                 ...state,
                 currentCategory: action.currentCategory
+            }
+
+        case ADD_TO_CART:
+            return {
+                ...state,
+                cartOpen: true,
+                cart: [...state.cart, action.product]
             }
 
         // IF IT'S NONE OF THESE ACTIONS, DO NOT UPDATE STATE AT ALL AND KEEP THINGS THE SAME!
